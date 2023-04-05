@@ -12,7 +12,7 @@ namespace BuissnessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        //GenericRepository<Category> _repository = new GenericRepository<Category>();
+        
         private readonly ICategoryDal _categoryDal;
         public CategoryManager(ICategoryDal categoryDal)
         {
@@ -23,6 +23,21 @@ namespace BuissnessLayer.Concrete
         {
             _categoryDal.Add(category);
 
+        }
+
+        public void CategoryDelete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
+
+        public void CategoryUpdate(Category category)
+        {
+           _categoryDal.Update(category);
+        }
+
+        public Category GetByIdCategory(int id)
+        {
+            return _categoryDal.GetById(x => x.CategoryID == id);
         }
 
         public List<Category> GetList()

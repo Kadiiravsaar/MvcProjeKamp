@@ -11,6 +11,8 @@ namespace DataAccessLayer.Abstract
     {
         List<T> List();
 
+        T GetById(Expression<Func<T, bool>> filter);
+
         void Add(T p);
 
         void Delete(T p);

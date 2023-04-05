@@ -11,7 +11,13 @@ namespace BuissnessLayer.Abstract
     public interface ICategoryService 
     {
         List<Category> GetList();
-        void AddCategory(Category category);    
+        void AddCategory(Category category);   
+        
+        Category GetByIdCategory(int id);
+
+        void CategoryDelete(Category category);
+
+        void CategoryUpdate(Category category); 
 
     }
 }

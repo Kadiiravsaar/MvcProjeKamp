@@ -15,10 +15,12 @@ namespace MvcProjeKamp.Controllers
     public class CategoryController : Controller
     {
         CategoryManager _categoryManager = new CategoryManager(new EFCategoryDal());
+
         public ActionResult Index()
         {
             return View();
         }
+
         public ActionResult GetCategoryList()
         {
             var categoryValues = _categoryManager.GetList();
