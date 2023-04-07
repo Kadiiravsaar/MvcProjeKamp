@@ -15,6 +15,7 @@ namespace MvcProjeKamp.Controllers
     {
         CategoryManager _categoryManager = new CategoryManager(new EFCategoryDal());
 
+
         public ActionResult Index()
         {
             var category = _categoryManager.GetList();
@@ -24,9 +25,11 @@ namespace MvcProjeKamp.Controllers
         [HttpGet]
         public ActionResult AddCategory()
         {
-         
+
             return View();
+
         }
+
 
         [HttpPost]
         public ActionResult AddCategory(Category c)

@@ -68,6 +68,14 @@
     <Compile Include="EntityFramework\EFContentDal.cs" />
     <Compile Include="EntityFramework\EFHeadingDal.cs" />
     <Compile Include="EntityFramework\EFWriterDal.cs" />
+    <Compile Include="Migrations\202304062048329_writerRevize.cs" />
+    <Compile Include="Migrations\202304062048329_writerRevize.designer.cs">
+      <DependentUpon>202304062048329_writerRevize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304070238509_writerTitleAdd.cs" />
+    <Compile Include="Migrations\202304070238509_writerTitleAdd.designer.cs">
+      <DependentUpon>202304070238509_writerTitleAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +88,14 @@
       <Project>{87c9eed3-a03c-4be5-88e9-a3d29e2047bf}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202304062048329_writerRevize.resx">
+      <DependentUpon>202304062048329_writerRevize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070238509_writerTitleAdd.resx">
+      <DependentUpon>202304070238509_writerTitleAdd.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -18,14 +18,20 @@ namespace EntityLayer.Concrete
         [StringLength(50)] // bunlara attribute denir
         public string WriterSurName { get; set; }
 
+        [StringLength(100)]
+        public string WriterAbout { get; set; }
+
         [StringLength(1000)]
         public string WriterImage { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string WriterMail { get; set; }
 
-        [StringLength(20)]
+        [StringLength(100)]
         public string WriterPassword { get; set; }
+
+        [StringLength(50)]
+        public string WriterTitle{ get; set; }
 
         public ICollection<Heading> Heading { get; set; }
         public ICollection<Content> Content { get; set; }
