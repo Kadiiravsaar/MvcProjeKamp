@@ -17,10 +17,8 @@ namespace MvcProjeKamp.Controllers
         CategoryManager _categoryManager = new CategoryManager(new EFCategoryDal());
         WriterManager _writerManager = new WriterManager(new EFWriterDal());
 
-
         public ActionResult Index()
         {
-           
             var headings = _headingManager.GetList();
             return View(headings);
         }
@@ -56,10 +54,7 @@ namespace MvcProjeKamp.Controllers
           
         }
       
-        public ActionResult ContentByHeading()
-        {
-            return View();     
-        }
+       
 
 
     }
