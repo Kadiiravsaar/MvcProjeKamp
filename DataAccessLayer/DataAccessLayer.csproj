@@ -80,6 +80,14 @@
     <Compile Include="Migrations\202304080220340_writerStatusAdded.designer.cs">
       <DependentUpon>202304080220340_writerStatusAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304120046493_ContentStatus-Add.cs" />
+    <Compile Include="Migrations\202304120046493_ContentStatus-Add.designer.cs">
+      <DependentUpon>202304120046493_ContentStatus-Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304120048382_HeadingStatusAdd.cs" />
+    <Compile Include="Migrations\202304120048382_HeadingStatusAdd.designer.cs">
+      <DependentUpon>202304120048382_HeadingStatusAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304080220340_writerStatusAdded.resx">
       <DependentUpon>202304080220340_writerStatusAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120046493_ContentStatus-Add.resx">
+      <DependentUpon>202304120046493_ContentStatus-Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304120048382_HeadingStatusAdd.resx">
+      <DependentUpon>202304120048382_HeadingStatusAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

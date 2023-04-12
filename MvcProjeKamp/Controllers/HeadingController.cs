@@ -53,8 +53,38 @@ namespace MvcProjeKamp.Controllers
             return RedirectToAction("Index");
           
         }
-      
-       
+
+        [HttpGet]
+        public ActionResult EditHeading(int id)
+        {
+
+            List<SelectListItem> valueCategory = (from x in _categoryManager.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+
+            ViewBag.vlc = valueCategory;
+
+            var headingId = _headingManager.GetByIdHeading(id);
+            return View(headingId);
+        }
+        [HttpPost]
+        public ActionResult EditHeading(Heading heading)
+        {
+            _headingManager.HeadingUpdate(heading);
+            return RedirectToAction("Index");
+
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var heading = _headingManager.GetByIdHeading(id);  
+            _headingManager.HeadingDelete(heading);
+            return RedirectToAction("Index");
+
+        }
+
 
 
     }

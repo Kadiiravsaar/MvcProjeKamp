@@ -44,7 +44,7 @@ namespace BuissnessLayer.Concrete
 
         }
 
-        public List<Content> GetListById(int id)
+        public List<Content> GetListByHeadingId(int id)
         {
            var contentId =  _contentDal.List(x=>x.HeadingID == id);
             return contentId;

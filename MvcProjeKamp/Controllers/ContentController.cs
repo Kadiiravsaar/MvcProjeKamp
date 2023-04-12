@@ -19,7 +19,7 @@ namespace MvcProjeKamp.Controllers
 
         public ActionResult ContentByHeading(int id)
         {
-            var contentValues = _contentManager.GetListById(id);
+            var contentValues = _contentManager.GetListByHeadingId(id);
             return View(contentValues);
         }
     }
