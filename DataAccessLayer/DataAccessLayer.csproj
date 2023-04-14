@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202304120048382_HeadingStatusAdd.designer.cs">
       <DependentUpon>202304120048382_HeadingStatusAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304140344393_add_Message_Classses.cs" />
+    <Compile Include="Migrations\202304140344393_add_Message_Classses.designer.cs">
+      <DependentUpon>202304140344393_add_Message_Classses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304120048382_HeadingStatusAdd.resx">
       <DependentUpon>202304120048382_HeadingStatusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304140344393_add_Message_Classses.resx">
+      <DependentUpon>202304140344393_add_Message_Classses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
