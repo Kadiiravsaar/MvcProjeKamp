@@ -1,11 +1,10 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
+@model List<Message>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 
 <!DOCTYPE html>
 <html>
@@ -72,7 +71,7 @@
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
-                                    @foreach (var contact in Model)
+                                    @foreach (var message in Model)
                                     {
 
                                         <tr>
@@ -82,10 +81,10 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href=""><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@contact.ContactID">@contact.UserName</a></td>
+                                            <td class="mailbox-star"><a href="/Message/GetInBoxDetails/@message.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Message/GetInBoxDetails/@message.MessageId">@message.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@contact.Subject</b> - @contact.Message.Substring(0, @contact.Message.Length - 3)....
+                                                <b>@message.Subject</b> - @message.MessageContent.Substring(0, message.MessageContent.Length - 3)....
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">5 mins ago</td>
@@ -133,3 +132,4 @@
 
 </body>
 </html>
+
