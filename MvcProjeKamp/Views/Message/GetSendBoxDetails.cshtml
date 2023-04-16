@@ -1,11 +1,12 @@
-﻿@model EntityLayer.Concrete.Contact
+﻿
+@model EntityLayer.Concrete.Message
 
 @{
-    ViewBag.Title = "GetContactDetails";
+    ViewBag.Title = "GetInBoxDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>GetContactDetails</h2>
+
 
 
 <!DOCTYPE html>
@@ -17,9 +18,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>İletişim Sayfası</h1>
+                    <h1>Compose</h1>
                 </div>
-               
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Compose</li>
+                    </ol>
+                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -32,7 +38,7 @@
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">Gelen Mesaj Detayları</h3>
+                            <h3 class="card-title">Read Mail</h3>
                             <div class="card-tools">
                                 <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
                                 <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
@@ -44,14 +50,13 @@
                                 <h5>Konu : @Html.DisplayFor(x => x.Subject)</h5>
                                 <br />
                                 <h6>
-                                    Kimden : @Html.DisplayFor(x => x.UserMail)
-                                    <span class="mailbox-read-time float-right">@DateTime.Parse(@Html.DisplayFor(x => x.ContactDate).ToString()).ToString("dd-MMM-yyyy")</span>
+                                    Kime : @Html.DisplayFor(x => x.ReceiverMail)
+                                    <span class="mailbox-read-time float-right">@DateTime.Parse(@Html.DisplayFor(x => x.MessageDate).ToString()).ToString("dd-MMM-yyyy")</span>
                                 </h6>
                             </div>
                             <br />
-                            <!-- /.mailbox-controls -->
                             <div class="mailbox-read-message">
-                                <p>@Html.DisplayFor(x => x.Message)</p>
+                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
                             </div>
                             <!-- /.mailbox-read-message -->
                         </div>

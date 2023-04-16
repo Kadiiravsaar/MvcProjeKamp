@@ -88,7 +88,8 @@
                                                 <b>@contact.Subject</b> - @contact.Message.Substring(0, @contact.Message.Length - 3)....
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@(((DateTime)contact.ContactDate).ToString("dd-MMM-yyyy"))
+                                            </td>
                                         </tr>
                                     }
 
