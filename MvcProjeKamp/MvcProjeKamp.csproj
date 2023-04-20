@@ -152,6 +152,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminTema\.gitignore" />

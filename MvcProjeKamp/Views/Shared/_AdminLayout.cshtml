@@ -1,4 +1,4 @@
-﻿    
+﻿
 @{
     Layout = null;
 }
@@ -34,7 +34,6 @@ to get the desired effect
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
-        
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -61,15 +60,20 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="/AdminCategory/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
+                        with font-awesome or any other icon font library -->
+                        @if (User.IsInRole("A"))
+                        {
+
+
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="/AdminCategory/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kategoriler
+                                    </p>
+                                </a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a href="/Heading/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -133,15 +137,6 @@ to get the desired effect
                             </a>
 
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Yazılar
-                                </p>
-                            </a>
-
-                        </li>
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
@@ -180,7 +175,7 @@ to get the desired effect
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-apple-alt"></i>
                                 <p>
-                                    Çıkış Yap 
+                                    Çıkış Yap
                                 </p>
                             </a>
 
@@ -196,7 +191,7 @@ to get the desired effect
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-    
+
             <div class="content">
 
                 @RenderBody()
@@ -204,8 +199,8 @@ to get the desired effect
             </div>
             <!-- /.content -->
         </div>
-    
-       
+
+
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
