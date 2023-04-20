@@ -98,6 +98,10 @@
     <Compile Include="Migrations\202304160031542_ContactAddDAte.designer.cs">
       <DependentUpon>202304160031542_ContactAddDAte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304200221160_adminEntity.cs" />
+    <Compile Include="Migrations\202304200221160_adminEntity.designer.cs">
+      <DependentUpon>202304200221160_adminEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304160031542_ContactAddDAte.resx">
       <DependentUpon>202304160031542_ContactAddDAte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304200221160_adminEntity.resx">
+      <DependentUpon>202304200221160_adminEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
