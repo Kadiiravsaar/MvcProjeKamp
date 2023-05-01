@@ -18,12 +18,14 @@ namespace MvcProjeKamp.Controllers
         {
             return View();
         }
+
         public ActionResult MyHeading()
         {
             
             var values = _headingManager.GetListByWriter();
             return View(values);
         }
+
         [HttpGet]
         public ActionResult NewHeading()
         {
@@ -36,15 +38,38 @@ namespace MvcProjeKamp.Controllers
             ViewBag.vlc = valueCategory;
             return View();
         }
+
         [HttpPost]
         public ActionResult NewHeading(Heading h)
         {
-
             h.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             h.WriterID = 4;
             h.HeadingStatus = true;
             _headingManager.AddHeading(h);
-            return RedirectToAction("Index");
+            return RedirectToAction("WriterProfile");
+        }
+
+        [HttpGet]
+        public ActionResult EditHeading(int id)
+        {
+
+            List<SelectListItem> valueCategory = (from x in _categoryManager.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+
+            ViewBag.vlc = valueCategory;
+
+            var headingId = _headingManager.GetByIdHeading(id);
+            return View(headingId);
+        }
+        [HttpPost]
+        public ActionResult EditHeading(Heading heading)
+        {
+            _headingManager.HeadingUpdate(heading);
+            return RedirectToAction("MyHeading");
 
         }
     }
