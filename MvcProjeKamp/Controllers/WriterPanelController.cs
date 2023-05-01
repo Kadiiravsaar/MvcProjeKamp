@@ -65,6 +65,7 @@ namespace MvcProjeKamp.Controllers
             var headingId = _headingManager.GetByIdHeading(id);
             return View(headingId);
         }
+
         [HttpPost]
         public ActionResult EditHeading(Heading heading)
         {
@@ -72,6 +73,16 @@ namespace MvcProjeKamp.Controllers
             return RedirectToAction("MyHeading");
 
         }
+
+        public ActionResult DeleteHeading(int id)
+        {
+            var heading = _headingManager.GetByIdHeading(id);
+            heading.HeadingStatus = false;
+            _headingManager.HeadingDelete(heading);
+            return RedirectToAction("MyHeading");
+
+        }
+
     }
 
 }

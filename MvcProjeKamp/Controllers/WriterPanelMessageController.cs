@@ -1,7 +1,5 @@
-﻿using BuissnessLayer.Abstract;
-using BuissnessLayer.Concrete;
+﻿using BuissnessLayer.Concrete;
 using BuissnessLayer.Valitadion;
-using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -13,11 +11,10 @@ using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
 {
-    public class MessageController : Controller
+    public class WriterPanelMessageController : Controller
     {
         MessageManager messageManager = new MessageManager(new EFMessageDal());
         MessageValidator messageValidator = new MessageValidator();
-
         public ActionResult Index() // inbox
         {
             var messagelist = messageManager.GetListInBox();
@@ -41,7 +38,6 @@ namespace MvcProjeKamp.Controllers
             var messageById = messageManager.GetByIdMessage(id);
             return View(messageById);
         }
-
         [HttpGet]
         public ActionResult NewMessage()
         {
@@ -54,6 +50,7 @@ namespace MvcProjeKamp.Controllers
             ValidationResult result = messageValidator.Validate(message);
             if (result.IsValid)
             {
+                message.SenderMail = "admin@gmail.com";
                 message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 messageManager.AddMessage(message);
                 return RedirectToAction("SendBox");
@@ -67,5 +64,12 @@ namespace MvcProjeKamp.Controllers
             }
             return View();
         }
+
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
+        }
+
+
     }
 }
