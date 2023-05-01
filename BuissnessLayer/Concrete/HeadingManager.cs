@@ -20,7 +20,7 @@ namespace BuissnessLayer.Concrete
             _headingDal = headingDal;
         }
 
-    
+
 
         public void AddHeading(Heading heading)
         {
@@ -38,6 +38,11 @@ namespace BuissnessLayer.Concrete
         {
             var get = _headingDal.List();
             return get;
+        }
+
+        public List<Heading> GetListByWriter()
+        {
+            return _headingDal.List(x => x.WriterID == 4);
         }
 
         public void HeadingDelete(Heading heading)
