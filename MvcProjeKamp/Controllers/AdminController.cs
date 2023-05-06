@@ -35,5 +35,30 @@ namespace MvcProjeKamp.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterLogin(Writer a)
+        {
+            var writerLogin = _context.Writers.FirstOrDefault(x => x.WriterMail == a.WriterMail && x.WriterPassword == a.WriterPassword);
+            if (writerLogin != null)
+            {
+                FormsAuthentication.SetAuthCookie(writerLogin.WriterMail, false);
+                Session["WriterMail"] = writerLogin.WriterMail;
+                return RedirectToAction("MyContent", "WriterPanelContent");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
+            }
+
+            return View();
+
+        }
     }
 }
