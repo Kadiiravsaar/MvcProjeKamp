@@ -9,9 +9,11 @@ using System.Web.Security;
 
 namespace MvcProjeKamp.Controllers
 {
+    [AllowAnonymous]
     public class AdminController : Controller
     {
         Context _context = new Context();
+        
         [HttpGet]
         public ActionResult AdminLogin()
         {
